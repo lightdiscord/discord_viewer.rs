@@ -1,0 +1,6 @@
+[package]
+name = "discord_viewer"
+version = "0.1.0"
+authors = ["LightDiscord <contact@lightdiscord.fr>"]
+
+[dependencies]
