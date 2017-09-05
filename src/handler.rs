@@ -35,11 +35,12 @@ pub fn handle_events(connection: &mut Connection, state: &mut State) {
             println!("{}", Colour::RGB(233,226,208).paint(format!("↳ {}", message.content)));
           },
           Some(ChannelRef::Private(channel)) => {
-            if message.author.id == channel.recipient.id {
-              println!("[@{}] ← {}", channel.recipient.name, message.content);
-            } else {
-              println!("[@{}] → {}", channel.recipient.name, message.content);
-            }
+            println!("{} {} {}",
+              Colour::RGB(234,144,133).paint(format!("@{}", state.user().username)),
+              Colour::RGB(212,93,121).paint(format!("{}", if message.author.id == channel.recipient.id {"←"} else {"→"})),
+              Colour::RGB(234,144,133).paint(format!("@{}", channel.recipient.name))
+            );
+            println!("{}", Colour::RGB(233,226,208).paint(format!("↳ {}", message.content)));
           },
           None => {}
         }
