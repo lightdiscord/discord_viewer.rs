@@ -1,2 +1,5 @@
 # discord_viewer.rs
-Client Discord pour suivre les discussions de tous les canaux en même temps
+Discord client used to see all messages from any channels of any guilds.
+
+## Before you start !
+You need to set `DISCORD_TOKEN` environment variable to an user token.
